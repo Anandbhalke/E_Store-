@@ -71,7 +71,7 @@ def checkout(request):
 # # PAYMENT INTEGRATION
 
         id = Order.order_id
-        oid=str(id)+"ShopyCart"
+        oid=str(id)+"E_store"
         param_dict = {
 
             'MID':keys.MID,
@@ -106,7 +106,7 @@ def handlerequest(request):
             print('order successful')
             a=response_dict['ORDERID']
             b=response_dict['TXNAMOUNT']
-            rid=a.replace("ShopyCart","")
+            rid=a.replace("E_store","")
            
             print(rid)
             filter2= Orders.objects.filter(order_id=rid)
@@ -135,7 +135,7 @@ def profile(request):
         print(i.oid)
         # print(i.order_id)
         myid=i.oid
-        rid=myid.replace("ShopyCart","")
+        rid=myid.replace("E_store","")
         print(rid)
     status=OrderUpdate.objects.filter(order_id=int 
     (rid))
